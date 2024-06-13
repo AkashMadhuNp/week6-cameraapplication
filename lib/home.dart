@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:camera/camera.dart';
+import 'package:camera_applications/gallery.dart';
 import 'package:external_path/external_path.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -139,7 +140,19 @@ class _HomeScreenState extends State<HomeScreen> {
               icon: Icon(
                 Icons.exit_to_app,
                 color: Colors.white,
-              ))
+              )),
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => GalleryScreen(imageList: imageList),
+                  ),
+                );
+              },
+              icon: Icon(
+                Icons.photo_album,
+                color: Colors.white,
+              )),
         ],
       ),
       body: Stack(
